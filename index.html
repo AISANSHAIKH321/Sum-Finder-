@@ -1,0 +1,107 @@
+<html>
+<head>
+    <title>Sum App by Kamal Sir</title>
+    <style>
+        * { font-size:50px; font-family:Ink Free; }
+        body { background-color: lightblue; }
+    </style>
+</head>
+<body>
+    <center>
+        <h1> Sum Finder App </h1>
+        <form onsubmit="find(event)">
+            <input type="number" placeholder="enter integer" id="num"/>
+            <br/><br/>
+            <input type="submit" value="M1"/>
+            <input type="submit" value="M2"/>
+            <input type="submit" value="M3"/>
+        </form>
+        <h2 id="msg"></h2>
+        <script>
+            function find(event) {
+                event.preventDefault();
+                let num = document.getElementById("num");
+                let msg = document.getElementById("msg");
+
+                if (num.value === "") {
+                    alert("You did not enter an integer");
+                    msg.innerHTML = "";
+                    num.focus();
+                    return;
+                }
+
+                let n = parseInt(num.value);
+                if (n < 1) {
+                    alert("n should be minimum 1");
+                    msg.innerHTML = "";
+                    num.focus();
+                    return;
+                }
+
+                let action = document.activeElement.value;
+
+                if (action === "M1") {
+                    let ans = "";
+                    let i = 1, s = 0;
+                    while (i <= n) {
+                        s = s + i;
+                        i++;
+                    }
+                    ans = "sum = " + s;
+                    msg.innerHTML = "ans 1 = " + ans;
+                }
+                else if (action === "M2") {
+                    let ans = "";
+                    let i = 1, s = 0;
+                    do {
+                        s = s + i;
+                        i++;
+                    } while (i <= n);
+                    ans = "sum = " + s;
+                    msg.innerHTML = "ans 2 = " + ans;
+                }
+                else if (action === "M3") {
+                    let ans = "";
+                    let s = 0;
+                    for (let i = 1; i <= n; i++) {
+                        s = s + i;
+                    }
+                    ans = "sum = " + s;
+                    msg.innerHTML = "ans 3 = " + ans;
+                }
+            }
+        </script>
+    </center>
+</body>
+</html>
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+		
